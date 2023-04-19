@@ -7,7 +7,7 @@ Our Simple Shell is a command-line shell implemented in C for educational purpos
 **This is a Holberton School project.**
 ![Holberton School logo](docs/static_files/holbertonschoollogo.png "Holberton School")
 
-## Funcionalities
+## Functionalities
 
 As previously mentioned this code lacks advanced functionalities so, here I will list a few of its most important capabilities.
 
@@ -29,7 +29,7 @@ git clone https://github.com/RoPallas/holbertonschool-simple_shell.git
 ```
 2. Navigate to the installation directory:
 ```sh
-cd holbertonschool-simple_shell.git
+cd holbertonschool-simple_shell
 ```
 3. Compile the source code:
 ```sh
