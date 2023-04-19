@@ -3,9 +3,16 @@ Our Simple Shell Project
 
 ![Simple Shell logo](docs/static_files/simpleshellLogo.png "Our Simple Shell Project")
 
+---
+
 Our Simple Shell is a command-line shell implemented in C for educational purposes. It supports basic command execution and has limited features compared to shells like bash.
+
+---
+
 **This is a Holberton School project.**
 ![Holberton School logo](docs/static_files/holbertonschoollogo.png "Holberton School")
+
+---
 
 ## Functionalities
 
