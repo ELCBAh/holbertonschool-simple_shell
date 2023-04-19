@@ -9,7 +9,8 @@ Our Simple Shell is a command-line shell implemented in C for educational purpos
 
 ---
 
-**This is a Holberton School project.**
+<div align="center"><strong>This is a Holberton School project.</strong></div>
+
 ![Holberton School logo](docs/static_files/holbertonschoollogo.png "Holberton School")
 
 ---
