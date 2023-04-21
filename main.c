@@ -12,7 +12,6 @@ int main(int argc, char **argv)
 		n_read = read_input(&line, &len_line);
 		if (n_read < 0)
 			return (-1);
-		line[strcspn(line, "\n")] = '\0'; /* \n not being properly removed fix */
 		argc = 0;
 		if (process_input(line, &argc, &argv) < 0)
 			return (-1);

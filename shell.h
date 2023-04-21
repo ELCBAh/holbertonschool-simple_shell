@@ -16,5 +16,6 @@ int process_input(char *line, int *argc, char ***argv);
 void exec_function(char **argv);
 void free_all(char *line, char **argv, int argc);
 char *find_exec(char *command);
+void print_env(void);
 
 #endif

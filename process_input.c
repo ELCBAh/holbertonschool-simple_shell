@@ -13,12 +13,10 @@ int process_input(char *line, int *argc, char ***argv)
 	while (token)
 	{
 		(*argc)++;
-		while (*(line + (token - line_cpy) + strlen(token)) == ' ')
-			line += 1;
 		token = strtok(NULL, " \n");
 	}
 	(*argc)++;
-	*argv = malloc(sizeof(char *) * (*argc));
+	*argv = malloc(sizeof(char *) * (*argc + 1));
 	if (!*argv)
 		return (-1);
 	strcpy(line_cpy, line);
