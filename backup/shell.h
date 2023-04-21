@@ -1,6 +1,5 @@
 #ifndef SHELL_H
 #define SHELL_H
-extern char **environ;
 
 #include <stdio.h>
 #include <stdlib.h>
