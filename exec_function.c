@@ -1,15 +1,9 @@
 #include "shell.h"
-/***/
-/*
- * Handling env
-void print_env(void)
-{
-	int i = 0;
-
-	while (environ[i])
-		printf("%s\n", environ[i++]);
-}
-*/
+/**
+ * exec_function - initializes protype
+ * @argv: argument to pass
+ * Description: takes an argument containing a function and executes it
+ */
 void exec_function(char **argv)
 {
 	pid_t pid;
@@ -20,21 +14,6 @@ void exec_function(char **argv)
 	{
 		exit(0);
 	}
-	/*
-	 * Handling env
-	else if (strcmp(argv[0], "env") == 0)
-	{
-		if (argv[1] == NULL)
-		{
-			print_env();
-		}
-		else
-		{
-			fprintf(stderr, "env: too many arguments\n");
-			return;
-		}
-	}
-	*/
 	exec_path = find_exec(argv[0]);
 	if (!exec_path)
 	{

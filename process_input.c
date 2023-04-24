@@ -1,9 +1,16 @@
 #include "shell.h"
-/***/
+/**
+ * process_input - initializes prototype
+ * @line: line passed
+ * @argc: pointer to number of arguments
+ * @argv: pointer to pointer of string of arguments
+ * Description: takes input data and process its content
+ * Return: number of arguments or -1 if it fails
+ */
 int process_input(char *line, int *argc, char ***argv)
 {
 	char *line_cpy, *token;
-	int i;
+	int i = 0;
 
 	line_cpy = malloc(strlen(line) + 1);
 	if (!line_cpy)
@@ -19,16 +26,16 @@ int process_input(char *line, int *argc, char ***argv)
 	*argv = malloc(sizeof(char *) * (*argc + 1));
 	if (!*argv)
 		return (-1);
-	strcpy(line_cpy, line);
 	token = strtok(line_cpy, " \n");
-	for (i = 0; i < *argc - 1 && token != NULL; i++)
+	while (token)
 	{
 		(*argv)[i] = strdup(token);
 		if (!(*argv)[i])
 			return (-1);
+		i++;
 		token = strtok(NULL, " \n");
 	}
-	(*argv)[*argc - 1] = NULL;
+	(*argv)[i] = NULL;
 	free(line_cpy);
-	return (0);
+	return (i);
 }

@@ -1,5 +1,10 @@
 #include "shell.h"
-/***/
+/**
+ * find_exec - initializes prottype
+ * @command: command being passed through input
+ * Description: takes an input command and looks in path for actual function
+ * Return: A duplicate of the PATH previously divided in parts
+ */
 char *find_exec(char *command)
 {
 	char *path, *path_cpy, *dir;
