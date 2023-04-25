@@ -1,0 +1,7 @@
+ls
+ls -l
+ls -a
+ls
+ls
+ls
+cat commands.txt

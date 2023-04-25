@@ -9,6 +9,13 @@ char *find_exec(char *command)
 {
 	char *path, *path_cpy, *dir;
 
+	if (strchr(command, '/') != NULL)
+	{
+		if (access(command, X_OK) == 0)
+			return (strdup(command));
+		else
+			return (NULL);
+	}
 	path = getenv("PATH");
 	if (!path)
 		return (NULL);
