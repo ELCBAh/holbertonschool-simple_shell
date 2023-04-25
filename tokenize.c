@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * tokenize -
- * @line: line to tokenize
+ * tokenize - splits a string and returns an array of each word of the string.
+ * @line: string to tokenize
  *
- * Return: Pointer to pointer
+ * Return: Pointer to pointer to an array of words
  */
 char **tokenize(char *line)
 {
