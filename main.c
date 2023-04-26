@@ -11,7 +11,7 @@ int main(void)
 	char **args;
 	size_t len_line = 0;
 	ssize_t n_read;
-	int exit_s = 0, i;
+	int i;
 
 	while (1)
 	{
@@ -19,13 +19,12 @@ int main(void)
 			printf("$ ");
 		n_read = getline(&line, &len_line, stdin);
 		if (n_read < 0)
-			break;
-		args = tokenize(line);
-		if (strcmp(args[0], "exit") == 0)
 		{
-			exit_s = 1;
 			break;
 		}
+		args = tokenize(line);
+		if (strcmp(args[0], "exit") == 0)
+			break;
 		if (exe_cmd(args) == -1)
 			fprintf(stderr, "hsh: %s: command not found.\n", args[0]);
 		for (i = 0; args[i]; i++)
@@ -39,7 +38,5 @@ int main(void)
 			free(args[i]);
 		free(args);
 	}
-	if (exit_s == 1)
-		exit(EXIT_SUCCESS);
-	exit(EXIT_FAILURE);
+	return (0);
 }
