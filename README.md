@@ -22,9 +22,11 @@ Our Simple Shell is a command-line shell implemented in C for educational purpos
 As previously mentioned this code lacks advanced functionalities so, here I will list a few of its most important capabilities.
 
 - Displays a prompt and waits for the user to type a command. A command line always ends with a new line.
+- In case it is launched in non-interactive mode the "$" sign won't be printed.
 - If an executable cannot be found, prints an error message and displays the prompt again.
 - Handles command lines with arguments.
 - Handles the PATH.
+- Handles the environment variable.
 - Input exit implemented.
 
 ## Pre-requisites
