@@ -37,7 +37,7 @@ GCC (GNU89 Compiler)
 
 ## Flowchart
 
-![flowchart](docs/static_files/Diagrama en blanco.png "Flowchart")
+![flowchart](docs/static_files/flowchart.png "Flowchart")
 
 ---
 
