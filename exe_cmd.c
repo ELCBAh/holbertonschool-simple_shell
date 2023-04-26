@@ -21,9 +21,7 @@ int exe_cmd(char **args)
 		}
 		return (0);
 	}
-	printf("cmd: %s\n", args[0]);
 	path_cmd = get_path(args[0]);
-	printf("path cmd: %s\n", path_cmd);
 	if (path_cmd == NULL)
 		return (-1);
 	pid = fork();
