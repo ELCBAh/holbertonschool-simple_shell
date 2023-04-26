@@ -32,14 +32,14 @@ int main(void)
 			free(args[i]);
 		free(args), args = NULL;
 	}
-    free(line);
-    if (args)
+	free(line);
+	if (args)
 	{
 		for (i = 0; args[i]; i++)
 			free(args[i]);
 		free(args);
 	}
-    if (exit_s == 1)
+	if (exit_s == 1)
 		exit(EXIT_SUCCESS);
 	exit(EXIT_FAILURE);
 }
