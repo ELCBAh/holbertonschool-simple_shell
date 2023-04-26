@@ -33,6 +33,14 @@ As previously mentioned this code lacks advanced functionalities so, here I will
 
 GCC (GNU89 Compiler)
 
+---
+
+## Flowchart
+
+![flowchart](docs/static_files/Diagrama en blanco.png "Flowchart")
+
+---
+
 ## Installation
 
 1. Clone the repository:
