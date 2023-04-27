@@ -19,12 +19,14 @@ char *get_path(char *file)
 		{
 			if (stat(file, &buf) == 0)
 				return (strdup(file));
-			fprintf(stderr, "./hsh: 1: %s: not found\n", file);
-			exit(127);
+			return (NULL);
 
 		}
 	}
-	path_env = strdup(_getenv("PATH"));
+	path = _getenv("PATH");
+	if (!path)
+		return (NULL);
+	path_env = strdup(path);
 	if (path_env == NULL)
 		return (NULL);
 	path = strtok(path_env, ":");
@@ -41,6 +43,5 @@ char *get_path(char *file)
 		free(file_path);
 	}
 	free(path_env);
-	fprintf(stderr, "./hsh: 1: %s: not found\n", file);
-	exit(127);
+	return (NULL);
 }

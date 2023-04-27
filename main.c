@@ -11,7 +11,7 @@ int main(void)
 	char **args;
 	size_t len_line = 0;
 	ssize_t n_read;
-	int i, only_space = 1;
+	int i, no_args = 0, e_exit = 0;
 
 	while (1)
 	{
@@ -20,30 +20,30 @@ int main(void)
 		n_read = getline(&line, &len_line, stdin);
 		if (n_read < 0)
 			break;
-		for (i = 0; line[i] != '\0'; i++)
+		if (only_spaces(line) == 1)
 		{
-			if (line[i] != 10 && line[i] != 9 && line[i] != 32)
-				only_space = 0;
-		}
-		if (only_space == 1)
-		{
-			free(line);
-			return (0);
+			no_args = 1;
+			continue;
 		}
 		args = tokenize(line);
 		if (strcmp(args[0], "exit") == 0)
 			break;
-		exe_cmd(args);
-		for (i = 0; args[i]; i++)
-			free(args[i]);
-		free(args), args = NULL;
+		if (exe_cmd(args) == -1)
+		{
+			fprintf(stderr, "./hsh: 1: %s: not found\n", args[0]);
+			e_exit = 1;
+			break;
+		}
+		_free(args);
+		args = NULL;
 	}
 	free(line);
-	if (args)
+	if (no_args == 0)
 	{
-		for (i = 0; args[i]; i++)
-			free(args[i]);
-		free(args);
+		if (args)
+			_free(args);
 	}
+	if (e_exit == 1)
+		exit(127);
 	return (0);
 }
