@@ -11,8 +11,7 @@ int main(void)
 	char **args;
 	size_t len_line = 0;
 	ssize_t n_read;
-	int i;
-
+	int i, only_space = 1;
 	while (1)
 	{
 		if (isatty(STDIN_FILENO) == 1)
@@ -22,6 +21,13 @@ int main(void)
 		{
 			break;
 		}
+		for (i = 0; line[i] != '\0'; i++)
+		{
+			if (line[i] != 10 && line[i] != 9 && line[i] != 32)
+				only_space = 0;
+		}
+		if (only_space == 1)
+			return (0);
 		args = tokenize(line);
 		if (strcmp(args[0], "exit") == 0)
 			break;
