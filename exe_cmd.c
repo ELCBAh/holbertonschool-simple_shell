@@ -36,7 +36,7 @@ int exe_cmd(char **args)
 		execve(path_cmd, args, environ);
 		perror(path_cmd);
 		free(path_cmd);
-		exit(EXIT_FAILURE);
+		exit(2);
 	}
 	else
 	{
