@@ -22,12 +22,9 @@ int exe_cmd(char **args)
 		return (0);
 	}
 	path_cmd = get_path(args[0]);
-	if (path_cmd == NULL)
-		return (-1);
 	pid = fork();
 	if (pid == -1)
 	{
-		/*printf("fork error\n");*/
 		perror("fork() error");
 		free(path_cmd);
 		exit(EXIT_FAILURE);
@@ -35,7 +32,6 @@ int exe_cmd(char **args)
 	else if (pid == 0)
 	{
 		execve(path_cmd, args, NULL);
-		/*printf("pid == 0\n");*/
 		perror(path_cmd);
 		free(path_cmd);
 		exit(EXIT_FAILURE);

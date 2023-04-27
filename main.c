@@ -33,8 +33,7 @@ int main(void)
 		args = tokenize(line);
 		if (strcmp(args[0], "exit") == 0)
 			break;
-		if (exe_cmd(args) == -1)
-			fprintf(stderr, "hsh: %s: command not found.\n", args[0]);
+		exe_cmd(args);
 		for (i = 0; args[i]; i++)
 			free(args[i]);
 		free(args), args = NULL;
