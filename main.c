@@ -11,7 +11,7 @@ int main(void)
 	char **args;
 	size_t len_line = 0;
 	ssize_t n_read;
-	int i, no_args = 0, e_exit = 0;
+	int no_args = 0, e_exit = 0;
 
 	while (1)
 	{
